@@ -1,13 +1,13 @@
 import type { UnwrapRef } from 'vue'
 
 export function useRequest<T, U>(fetcher: (payload: T) => Promise<U>) {
-  const isLoading = ref(false)
-  const error = ref<unknown | null>(null)
+  const loading = ref(false)
+  const error = ref<any | null>(null)
   const data = ref<U | null>(null)
 
   const request = async (payload: T) => {
     try {
-      isLoading.value = true
+      loading.value = true
       const response = await fetcher(payload)
       data.value = response as UnwrapRef<U>
       return response
@@ -17,13 +17,13 @@ export function useRequest<T, U>(fetcher: (payload: T) => Promise<U>) {
       throw err
     }
     finally {
-      isLoading.value = false
+      loading.value = false
     }
   }
 
   return {
     request,
-    isLoading,
+    loading,
     error,
     data,
   }

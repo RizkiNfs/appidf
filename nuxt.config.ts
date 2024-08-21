@@ -1,3 +1,5 @@
+import process from 'node:process'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: {
@@ -10,6 +12,10 @@ export default defineNuxtConfig({
     propsDestructure: true,
   },
   compatibilityDate: '2024-08-21',
+  runtimeConfig: {
+    JWT_PRIVATE_KEY: process.env.JWT_PRIVATE_KEY,
+    JWT_PUBLIC_KEY: process.env.JWT_PUBLIC_KEY,
+  },
   modules: [
     '@nuxt/eslint',
     '@nuxtjs/tailwindcss',

@@ -3,16 +3,23 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "db:generate": "drizzle-kit generate",
+    "db:push": "drizzle-kit push",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "addUser": "node ./addUser.mjs"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.1.2",
     "class-variance-authority": "^0.7.0",
+    "drizzle-orm": "^0.33.0",
+    "jose": "^5.7.0",
     "nuxt": "^3.12.4",
     "radix-vue": "^1.9.4",
     "vue": "^3.4.38",
@@ -23,8 +30,12 @@
     "@nuxt/eslint": "^0.5.1",
     "@nuxtjs/google-fonts": "^3.2.0",
     "@nuxtjs/tailwindcss": "^6.12.1",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/better-sqlite3": "^7.6.11",
+    "drizzle-kit": "^0.22.8",
     "eslint": "^9.9.0",
     "husky": "^9.1.5",
-    "tailwindcss": "^3.4.10"
+    "tailwindcss": "^3.4.10",
+    "zod": "^3.23.8"
   }
 }

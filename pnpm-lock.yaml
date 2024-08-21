@@ -23,6 +23,9 @@ importers:
       jose:
         specifier: ^5.7.0
         version: 5.7.0
+      nanoid:
+        specifier: ^5.0.7
+        version: 5.0.7
       nuxt:
         specifier: ^3.12.4
         version: 3.12.4(@parcel/watcher@2.4.1)(@types/node@22.4.2)(better-sqlite3@11.1.2)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(better-sqlite3@11.1.2))(eslint@9.9.0(jiti@1.21.6))(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@4.21.0)(terser@5.31.6)(typescript@5.5.4)(vite@5.4.2(@types/node@22.4.2)(terser@5.31.6))

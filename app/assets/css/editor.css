@@ -1,0 +1,28 @@
+.editor-content {
+
+  
+  & p.is-empty:first-child:before,
+  & h2.is-empty:before,
+  & h3.is-empty:before {
+
+    float: left;
+    content: attr(data-placeholder);
+    pointer-events: none;
+    height: 0;
+  }
+ 
+  & a {
+    text-decoration: underline;
+  }
+
+  & img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  & img.ProseMirror-selectednode {
+    outline: 2px solid #B4D5FF;
+  }
+
+
+}

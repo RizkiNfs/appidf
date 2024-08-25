@@ -16,6 +16,9 @@ export default defineNuxtConfig({
     JWT_PRIVATE_KEY: process.env.JWT_PRIVATE_KEY,
     JWT_PUBLIC_KEY: process.env.JWT_PUBLIC_KEY,
   },
+  css: [
+    '@/assets/css/editor.css',
+  ],
   modules: [
     '@nuxt/eslint',
     '@nuxtjs/tailwindcss',

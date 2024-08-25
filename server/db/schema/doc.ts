@@ -1,10 +1,7 @@
 import { sql } from 'drizzle-orm'
 import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core'
+import type { JSONContent } from '@tiptap/vue-3'
 import { users } from './user'
-
-export interface DocSchema extends Record<string, any> {
-
-}
 
 export const docs = sqliteTable('docs', {
   id: text('id').primaryKey(),
@@ -12,7 +9,7 @@ export const docs = sqliteTable('docs', {
   createdDate: integer('created_time').default(sql`(CURRENT_TIMESTAMP)`),
   modifiedDate: integer('updated_time').default(sql`(CURRENT_TIMESTAMP)`),
   owner: text('owner').references(() => users.username).notNull(),
-  schema: text('schema', { mode: 'json' }).$type<DocSchema>().notNull(),
+  schema: text('schema', { mode: 'json' }).$type<JSONContent>().notNull(),
 })
 
 export type DocSelect = typeof docs.$inferSelect

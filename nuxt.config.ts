@@ -2,6 +2,7 @@ import process from 'node:process'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: false,
   devtools: {
     enabled: true,
   },
@@ -24,6 +25,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'radix-vue/nuxt',
     '@nuxtjs/google-fonts',
+    '@vueuse/nuxt',
   ],
   googleFonts: {
     families: {
